@@ -1,62 +1,26 @@
 import m from 'mithril';
-import {
-  IFRAME_CMD_PAUSE_VIDEO,
-  IFRAME_CMD_PLAY_VIDEO,
-  sendIframeCommand,
-} from '../utils';
 import AppModel from '../models/AppModel';
-
-const handlePlay = () => sendIframeCommand(IFRAME_CMD_PLAY_VIDEO);
-const handlePause = () => sendIframeCommand(IFRAME_CMD_PAUSE_VIDEO);
-const handlePrev = () =>
-  (AppModel.currentStream =
-    (AppModel.currentStream - 1) % AppModel.streams.length);
-const handleNext = () =>
-  (AppModel.currentStream =
-    (AppModel.currentStream + 1) % AppModel.streams.length);
+import PlayIcon from './icons/PlayIcon';
+import PauseIcon from './icons/PauseIcon';
+import SkipPrevIcon from './icons/SkipPrevIcon';
+import SkipNextIcon from './icons/SkipNextIcon';
 
 const MediaControls = {
   view: () => {
+    const ICON_SIZE = 40;
+
     return m(
       'div',
       {
-        class: 'flex flex-row z-10 gap-10 absolute top-0 left-0',
+        class: 'w-screen flex justify-center absolute bottom-0 left-0',
       },
-      [
-        m(
-          'button',
-          {
-            class: 'text-lg bg-white rounded p-5',
-            onclick: handlePrev,
-          },
-          'prev'
-        ),
-        m(
-          'button',
-          {
-            class: 'text-lg bg-white rounded p-5',
-            onclick: handlePlay,
-          },
-          'play'
-        ),
-        m(
-          'button',
-          {
-            class: 'text-lg bg-white rounded p-5',
-            onclick: handlePause,
-          },
-          'pause'
-        ),
-        m(
-          'button',
-          {
-            class: 'text-lg bg-white rounded p-5',
-            onclick: handleNext,
-          },
-          'next'
-        ),
-      ]
-    );
+      m('div', {
+        class: 'bg-mainBg rounded-t-xl w-fit h-fit shadow-xl flex flex-row justify-center items-center gap-4 p-2'
+      }, [
+        m(SkipPrevIcon, { size: ICON_SIZE - 10, onclick: AppModel.prevVideo }),
+        (AppModel.isVideoPlaying ? m(PauseIcon, { size: ICON_SIZE, onclick: AppModel.pauseVideo }) : m(PlayIcon, { size: ICON_SIZE, onclick: AppModel.playVideo })),
+        m(SkipNextIcon, { size: ICON_SIZE - 10, onclick: AppModel.nextVideo })
+      ]));
   },
 };
 

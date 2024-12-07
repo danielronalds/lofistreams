@@ -1,6 +1,23 @@
+import { IFRAME_CMD_PAUSE_VIDEO, IFRAME_CMD_PLAY_VIDEO, sendIframeCommand } from "../utils";
+
 const AppModel = {
   currentStream: 0,
   getCurrentStreamId: () => AppModel.streams[AppModel.currentStream].videoId,
+  isVideoPlaying: true,
+  playVideo: () => {
+    sendIframeCommand(IFRAME_CMD_PLAY_VIDEO);
+    AppModel.isVideoPlaying = true;
+  },
+  pauseVideo: () => {
+    sendIframeCommand(IFRAME_CMD_PAUSE_VIDEO);
+    AppModel.isVideoPlaying = false;
+  },
+  prevVideo: () => {
+    AppModel.currentStream = (AppModel.currentStream - 1) % AppModel.streams.length;
+  },
+  nextVideo: () => {
+    AppModel.currentStream = (AppModel.currentStream + 1) % AppModel.streams.length;
+  },
   streams: [
     { name: 'Lofi Girl', videoId: 'jfKfPfyJRdk' },
     { name: 'Chillhop Radio', videoId: '5yx6BWlEVcY' },
