@@ -1,10 +1,13 @@
 import m from "mithril";
+import VideoPlayer from "./VideoPlayer";
+import MediaControls from "./MediaControls";
 
 const App = {
   view: () => {
-    return m("h1", {
-      class:"text-lg"
-    }, "Hello, world!");
+    return m("div", [
+      m(VideoPlayer),
+      m(MediaControls)
+    ]);
   }
 }
 
