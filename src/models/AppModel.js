@@ -14,10 +14,13 @@ const AppModel = {
     AppModel.isVideoPlaying = false;
   },
   prevVideo: () => {
-    AppModel.currentStream = (AppModel.currentStream - 1) % AppModel.streams.length;
+    const currentStream = AppModel.currentStream
+    AppModel.currentStream =  currentStream == 0 ? AppModel.streams.length - 1: currentStream - 1;
+    AppModel.isVideoPlaying = false;
   },
   nextVideo: () => {
     AppModel.currentStream = (AppModel.currentStream + 1) % AppModel.streams.length;
+    AppModel.isVideoPlaying = false;
   },
   streams: [
     { name: 'Lofi Girl', videoId: 'jfKfPfyJRdk' },
