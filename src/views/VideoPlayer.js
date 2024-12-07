@@ -2,7 +2,6 @@ import m from 'mithril';
 import AppModel from '../models/AppModel';
 import { IFRAME_CMD_PLAY_VIDEO, sendIframeCommand } from '../utils';
 
-
 const VideoPlayer = {
   oncreate: () => {
     sendIframeCommand(IFRAME_CMD_PLAY_VIDEO);
@@ -20,9 +19,13 @@ const VideoPlayer = {
         frameborder: '0',
         referrerpolicy: 'strict-origin-when-cross-origin',
       }),
-      !AppModel.isVideoPlaying ? m('div', { class: 'bg-black w-screen h-screen top-0 left-0 absolute z-10 flex justify-center items-center' }, [
-        m('h1', { class: 'text-2xl text-white' }, AppModel.getCurrentStreamName())
-      ]) : null
+      !AppModel.isVideoPlaying
+        ? m(
+            'div',
+            { class: 'bg-black w-screen h-screen top-0 left-0 absolute z-10 flex justify-center items-center' },
+            [m('h1', { class: 'text-2xl text-white' }, AppModel.getCurrentStreamName())]
+          )
+        : null,
     ]);
   },
 };

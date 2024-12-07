@@ -1,4 +1,4 @@
-import { IFRAME_CMD_PAUSE_VIDEO, IFRAME_CMD_PLAY_VIDEO, sendIframeCommand } from "../utils";
+import { IFRAME_CMD_PAUSE_VIDEO, IFRAME_CMD_PLAY_VIDEO, sendIframeCommand } from '../utils';
 
 const AppModel = {
   currentStream: 0,
