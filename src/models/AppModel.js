@@ -3,6 +3,7 @@ import { IFRAME_CMD_PAUSE_VIDEO, IFRAME_CMD_PLAY_VIDEO, sendIframeCommand } from
 const AppModel = {
   currentStream: 0,
   getCurrentStreamId: () => AppModel.streams[AppModel.currentStream].videoId,
+  getCurrentStreamName: () => AppModel.streams[AppModel.currentStream].name,
   isVideoPlaying: true,
   playVideo: () => {
     sendIframeCommand(IFRAME_CMD_PLAY_VIDEO);

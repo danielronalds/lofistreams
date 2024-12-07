@@ -12,7 +12,7 @@ const MediaControls = {
     return m(
       'div',
       {
-        class: 'w-screen flex justify-center absolute bottom-0 left-0',
+        class: 'w-screen flex justify-center absolute bottom-0 left-0 z-20',
       },
       m('div', {
         class: 'bg-mainBg rounded-t-xl w-fit h-fit shadow-xl flex flex-row justify-center items-center gap-4 p-2'
