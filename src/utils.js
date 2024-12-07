@@ -1,8 +1,8 @@
 export const sendIframeCommand = (command) => {
-  let iframe = document.getElementById("iframe");
+  let iframe = document.getElementById('iframe');
   iframe.contentWindow.postMessage(
-    JSON.stringify({ event: "command", func: command }),
-    "*",
+    JSON.stringify({ event: 'command', func: command }),
+    '*'
   );
 };
 
