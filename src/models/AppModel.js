@@ -4,7 +4,7 @@ const AppModel = {
   currentStream: 0,
   getCurrentStreamId: () => AppModel.streams[AppModel.currentStream].videoId,
   getCurrentStreamName: () => AppModel.streams[AppModel.currentStream].name,
-  isVideoPlaying: true,
+  isVideoPlaying: false,
   playVideo: () => {
     sendIframeCommand(IFRAME_CMD_PLAY_VIDEO);
     AppModel.isVideoPlaying = true;
