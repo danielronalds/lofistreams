@@ -7,7 +7,7 @@ import SkipNextIcon from './icons/SkipNextIcon';
 
 const MediaControls = {
   view: () => {
-    const ICON_SIZE = 40;
+    const ICON_SIZE = 30;
 
     return m(
       'div',
