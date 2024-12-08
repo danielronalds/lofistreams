@@ -17,7 +17,7 @@ const MediaControls = {
       m(
         'div',
         {
-          class: 'bg-mainBg rounded-xl w-fit h-fit shadow-xl flex flex-row justify-center items-center gap-4 p-2',
+          class: 'bg-primary border border-secondary rounded-xl w-fit h-fit shadow-2xl flex flex-row justify-center items-center gap-4 py-2 px-6',
         },
         [
           m(SkipPrevIcon, { size: ICON_SIZE - 10, onclick: AppModel.prevVideo }),
