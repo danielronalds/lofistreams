@@ -15,7 +15,7 @@ const VideoPlayer = {
           'https://www.youtube.com/embed/' +
           videoId +
           '?si=bZ9hFpMbL1xoD7vQ&controls=0&autoplay=0&enablejsapi=1&modestbranding=1&disablekb=1&playsinline=1&iv_load_policy=3',
-        class: 'pointer-events-none w-screen h-screen top-0 left-0 absolute z-0 select-none',
+        class: 'pointer-events-none h-[110vh] w-[116vw] top-[-10vh] left-[-16vw] absolute z-0 select-none',
         frameborder: '0',
         referrerpolicy: 'strict-origin-when-cross-origin',
       }),
