@@ -14,8 +14,8 @@ const AppModel = {
     AppModel.isVideoPlaying = false;
   },
   prevVideo: () => {
-    const currentStream = AppModel.currentStream
-    AppModel.currentStream =  currentStream == 0 ? AppModel.streams.length - 1: currentStream - 1;
+    const currentStream = AppModel.currentStream;
+    AppModel.currentStream = currentStream == 0 ? AppModel.streams.length - 1 : currentStream - 1;
     AppModel.isVideoPlaying = false;
   },
   nextVideo: () => {

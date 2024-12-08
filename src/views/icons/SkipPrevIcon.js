@@ -12,7 +12,7 @@ const SkipPrevIcon = {
         height: `${size}px`,
         viewBox: '0 -960 960 960',
         width: `${size}px`,
-        class: 'fill-secondary'
+        class: 'fill-secondary',
       },
       m('path', {
         d: 'M220-240v-480h66.67v480H220Zm520 0L389.33-480 740-720v480Zm-66.67-240Zm0 113.33v-226.66L507.33-480l166 113.33Z',
