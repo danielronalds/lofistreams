@@ -30,6 +30,7 @@ const AppModel = {
     { name: 'Medieval', videoId: 'eEZF9iIv5XM' },
     { name: 'ATLA', videoId: 'D-ya6U-pbWo' },
     { name: 'Deep Focus', videoId: 'PrV-JtKiwv4' },
+    { name: '80s Hiphop', videoId: 'gcB4ay_fO1k'}
   ],
 };
 
